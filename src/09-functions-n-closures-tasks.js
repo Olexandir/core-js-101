@@ -24,7 +24,7 @@
  *
  */
 function getComposition(f, g) {
-    return (x) => f(g(x));
+  return (x) => f(g(x));
 }
 
 
@@ -45,7 +45,7 @@ function getComposition(f, g) {
  *
  */
 function getPowerFunction(exponent) {
-    return (x) => x ** exponent;
+  return (x) => x ** exponent;
 }
 
 
@@ -63,7 +63,7 @@ function getPowerFunction(exponent) {
  *   getPolynom()      => null
  */
 function getPolynom() {
-    throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 
@@ -82,8 +82,8 @@ function getPolynom() {
  *   memoizer() => the same random number  (next run, returns the previous cached result)
  */
 function memoize(func) {
-    const random = func();
-    return () => random;
+  const random = func();
+  return () => random;
 }
 
 
@@ -102,8 +102,8 @@ function memoize(func) {
  * }, 2);
  * retryer() => 2
  */
-function retry(func, attempts) {
-    throw new Error('Not implemented');
+function retry(/* func, attempts */) {
+  throw new Error('Not implemented');
 }
 
 
@@ -130,8 +130,8 @@ function retry(func, attempts) {
  * cos(3.141592653589793) ends
  *
  */
-function logger(func, logFunc) {
-    throw new Error('Not implemented');
+function logger(/* func, logFunc */) {
+  throw new Error('Not implemented');
 }
 
 
@@ -148,8 +148,8 @@ function logger(func, logFunc) {
  *   partialUsingArguments(fn, 'a','b','c')('d') => 'abcd'
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
-function partialUsingArguments(fn, ...args1) {
-    throw new Error('Not implemented');
+function partialUsingArguments(/* fn, ...args1 */) {
+  throw new Error('Not implemented');
 }
 
 
@@ -171,21 +171,21 @@ function partialUsingArguments(fn, ...args1) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-    let data = startFrom - 1;
-    return () => {
-        data += 1;
-        return data;
-    };
+  let data = startFrom - 1;
+  return () => {
+    data += 1;
+    return data;
+  };
 }
 
 
 module.exports = {
-    getComposition,
-    getPowerFunction,
-    getPolynom,
-    memoize,
-    retry,
-    logger,
-    partialUsingArguments,
-    getIdGeneratorFunction,
+  getComposition,
+  getPowerFunction,
+  getPolynom,
+  memoize,
+  retry,
+  logger,
+  partialUsingArguments,
+  getIdGeneratorFunction,
 };
