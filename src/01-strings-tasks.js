@@ -19,7 +19,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-    return value1 + value2;
+  return value1 + value2;
 }
 
 
@@ -35,7 +35,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-    return value.length;
+  return value.length;
 }
 
 /**
@@ -52,7 +52,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    return `Hello, ${firstName} ${lastName}!`;
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -66,8 +66,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    const arr = value.split(' ');
-    return `${arr[1]} ${arr[2].slice(0, arr[2].length - 1)}`;
+  const arr = value.split(' ');
+  return `${arr[1]} ${arr[2].slice(0, arr[2].length - 1)}`;
 }
 
 
@@ -82,7 +82,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    return value[0];
+  return value[0];
 }
 
 /**
@@ -97,7 +97,7 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-    return value.trim();
+  return value.trim();
 }
 
 /**
@@ -112,7 +112,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    return value.repeat(count);
+  return value.repeat(count);
 }
 
 /**
@@ -128,7 +128,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    return str.replace(value, '');
+  return str.replace(value, '');
 }
 
 /**
@@ -143,7 +143,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    return str.replace(/\W/g, '');
+  return str.replace(/\W/g, '');
 }
 
 
@@ -158,7 +158,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    return str.toUpperCase();
+  return str.toUpperCase();
 }
 
 /**
@@ -177,7 +177,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    return str.split(';');
+  return str.split(';');
 }
 
 /**
@@ -204,7 +204,7 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 
@@ -225,7 +225,7 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    return (str).replace(/[a-zA-Z]/gi, (item) => String.fromCharCode(item.charCodeAt(0) + (item.toLowerCase() < 'n' ? 13 : -13)));
+  return (str).replace(/[a-zA-Z]/gi, (item) => String.fromCharCode(item.charCodeAt(0) + (item.toLowerCase() < 'n' ? 13 : -13)));
 }
 
 /**
@@ -242,7 +242,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    return (typeof value === 'string' || value instanceof String);
+  return (typeof value === 'string' || value instanceof String);
 }
 
 /**
@@ -270,46 +270,46 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    const id = value.slice(0, value.length - 1);
-    const card = value.slice(value.length - 1);
+  const id = value.slice(0, value.length - 1);
+  const card = value.slice(value.length - 1);
 
-    let col;
-    let row;
-    if (id === 'A') {
-        col = 1;
-    } else if (id === 'J') {
-        col = 11;
-    } else if (id === 'Q') {
-        col = 12;
-    } else if (id === 'K') {
-        col = 13;
-    } else {
-        col = id;
-    }
+  let col;
+  let row;
+  if (id === 'A') {
+    col = 1;
+  } else if (id === 'J') {
+    col = 11;
+  } else if (id === 'Q') {
+    col = 12;
+  } else if (id === 'K') {
+    col = 13;
+  } else {
+    col = id;
+  }
 
-    if (card === '♣') row = 1;
-    if (card === '♦') row = 2;
-    if (card === '♥') row = 3;
-    if (card === '♠') row = 4;
+  if (card === '♣') row = 1;
+  if (card === '♦') row = 2;
+  if (card === '♥') row = 3;
+  if (card === '♠') row = 4;
 
-    return col - 1 + (row - 1) * 13;
+  return col - 1 + (row - 1) * 13;
 }
 
 
 module.exports = {
-    concatenateStrings,
-    getStringLength,
-    getStringFromTemplate,
-    extractNameFromTemplate,
-    getFirstChar,
-    removeLeadingAndTrailingWhitespaces,
-    repeatString,
-    removeFirstOccurrences,
-    unbracketTag,
-    convertToUpperCase,
-    extractEmails,
-    getRectangleString,
-    encodeToRot13,
-    isString,
-    getCardId,
+  concatenateStrings,
+  getStringLength,
+  getStringFromTemplate,
+  extractNameFromTemplate,
+  getFirstChar,
+  removeLeadingAndTrailingWhitespaces,
+  repeatString,
+  removeFirstOccurrences,
+  unbracketTag,
+  convertToUpperCase,
+  extractEmails,
+  getRectangleString,
+  encodeToRot13,
+  isString,
+  getCardId,
 };
